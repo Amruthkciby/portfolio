@@ -1,174 +1,147 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
-    
+    
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <title>Portfolio Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Portfolio Website</title>
 
-    <style>
-        .home {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 10rem 9% 2rem;
-        }
-    </style>
+    <style>
+        /* ==== Animation for home section ==== */
+        .home {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 10rem 9% 2rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: homeFadeIn 1.2s ease-out 0.5s forwards;
+        }
+
+        @keyframes homeFadeIn {
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        /* ==== Floating Profile Image == */
+        .home-img img {
+            width: 220px;
+            border-radius: 50%;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.18);
+            animation: floatImg 3.5s ease-in-out infinite;
+        }
+
+        @keyframes floatImg {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* ==== Button Pulse ==== */
+        .btn {
+            display: inline-block;
+            background: #0066ff;
+            color: #fff;
+            padding: 0.6em 2em;
+            border-radius: 30px;
+            margin-top: 1.5em;
+            font-weight: bold;
+            transition: background 0.2s, transform 0.3s;
+            animation: btnPulse 2s ease-in-out infinite;
+            text-decoration: none;
+        }
+
+        @keyframes btnPulse {
+            0%,100% { box-shadow: 0 0 0 0 rgba(0,102,255, 0.3);}
+            50%    { box-shadow: 0 0 0 14px rgba(0,102,255, 0);}
+        }
+
+        /* ==== Social Icons Animation ==== */
+        .social-icons a {
+            margin: 0 0.5em;
+            font-size: 1.5em;
+            color: #333;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #0066ff;
+            transform: translateY(-6px) scale(1.18) rotate(-5deg);
+        }
+    </style>
 </head>
+
 <body>
-    <header>
-        <a href="index.html" class="logo1">AM</a>
-        <i class="fa-solid fa-bars" id="menu-icon"></i>
-        <nav>
-            <a href="index.html" class="active"> Home</a>
-            <a href="https://drive.google.com/file/d/1ISjqEDyy6pC4yHq4OYkey-6l-t3t-BjC/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
-            <a href="project.html" >Projects</a>
-            <a href="education.html" >Education</a>
-            <a href="service.html" >Services</a>
-            <a href="mailto:amruthkciby@gmail.com" >Contact</a>
-        </nav>
-    </header>
+    <header>
+        <a href="index.html" class="logo1">AM</a>
+        <i class="fa-solid fa-bars" id="menu-icon"></i>
+        <nav>
+            <a href="index.html" class="active"> Home</a>
+            <a href="https://drive.google.com/file/d/1ISjqEDyy6pC4yHq4OYkey-6l-t3t-BjC/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
+            <a href="project.html" >Projects</a>
+            <a href="education.html" >Education</a>
+            <a href="service.html" >Services</a>
+            <a href="mailto:amruthkciby@gmail.com" >Contact</a>
+        </nav>
+    </header>
 
-    <main>
-        <section class="home">
-            <div class="home-img">
-                <img src="image.png" alt="A photo of Amruth">
-            </div>
-            <div class="home-content">
-                <h1>Hi, It's <span>Amruth</span></h1>
-                <h3 class="typing-text">I'm a <span></span></h3>
-                <p>A passionate and dedicated professional with a strong foundation in software development and a keen interest in emerging technologies. My goal is to leverage my skills to build innovative solutions that make a difference.</p>
-                <div class="social-icons">
-                    <a href="https://linkedin.com/in/amruthkciby" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://github.com/Amruthkciby" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="X/Twitter Profile"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="https://www.instagram.com/wolf____hunter?utm_source=qr&igsh=bmhmMHZnZzluaW1x" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile"><i class="fa-brands fa-instagram"></i></a>
-                </div>
-                <a href="mailto:amruthkciby@gmail.com?subject=Hiring Inquiry from Your Portfolio" class="btn">Hire me</a>
-            </div>
-        </section>
-    </main>
-    
-    <script>
-        // Hiding Header on Scroll
-        const header = document.querySelector('header');
-        let lastScrollY = window.scrollY;
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                if (lastScrollY < window.scrollY) { header.classList.add('header-hidden'); }
-                else { header.classList.remove('header-hidden'); }
-            } else { header.classList.remove('header-hidden'); }
-            lastScrollY = window.scrollY;
-        });
+    <main>
+        <section class="home">
+            <div class="home-img">
+                <img src="image.png" alt="A photo of Amruth">
+            </div>
+            <div class="home-content">
+                <h1>Hi, It's <span>Amruth</span></h1>
+                <h3 class="typing-text">I'm a <span></span></h3>
+                <p>A passionate and dedicated professional with a strong foundation in software development and a keen interest in emerging technologies. My goal is to leverage my skills to build innovative solutions that make a difference.</p>
+                <div class="social-icons">
+                    <a href="https://linkedin.com/in/amruthkciby" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/Amruthkciby" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="X/Twitter Profile"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com/wolf____hunter?utm_source=qr&igsh=bmhmMHZnZzluaW1x" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <a href="mailto:amruthkciby@gmail.com?subject=Hiring Inquiry from Your Portfolio" class="btn">Hire me</a>
+            </div>
+        </section>
+    </main>
+    
+    <script>
+        // Hiding Header on Scroll
+        const header = document.querySelector('header');
+        let lastScrollY = window.scrollY;
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                if (lastScrollY < window.scrollY) { header.classList.add('header-hidden'); }
+                else { header.classList.remove('header-hidden'); }
+            } else { header.classList.remove('header-hidden'); }
+            lastScrollY = window.scrollY;
+        });
 
-        // Mobile Menu Toggle
-        let menuIcon = document.querySelector('#menu-icon');
-        let navbar = document.querySelector('nav');
-        menuIcon.onclick = () => {
-            menuIcon.classList.toggle('fa-xmark');
-            navbar.classList.toggle('active');
-        };
-    </script>
+        // Mobile Menu Toggle
+        let menuIcon = document.querySelector('#menu-icon');
+        let navbar = document.querySelector('nav');
+        menuIcon.onclick = () => {
+            menuIcon.classList.toggle('fa-xmark');
+            navbar.classList.toggle('active');
+        };
+    </script>
 
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script>
-        var typed = new Typed('.typing-text span', {
-            strings: ["Developer", "Web Designer", "Tech Enthusiast"],
-            typeSpeed: 100,
-            backSpeed: 60,
-            loop: true
-        });
-    </script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('.typing-text span', {
+            strings: ["Developer", "Web Designer", "Tech Enthusiast"],
+            typeSpeed: 100,
+            backSpeed: 60,
+            loop: true
+        });
+    </script>
 </body>
-=======
-<!DOCTYPE html>
-<html lang="en">
-    
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <title>Portfolio Website</title>
-
-    <style>
-        .home {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 10rem 9% 2rem;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <a href="index.html" class="logo1">AM</a>
-        <i class="fa-solid fa-bars" id="menu-icon"></i>
-        <nav>
-            <a href="index.html" class="active"> Home</a>
-            <a href="https://drive.google.com/file/d/1ISjqEDyy6pC4yHq4OYkey-6l-t3t-BjC/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
-            <a href="project.html" >Projects</a>
-            <a href="education.html" >Education</a>
-            <a href="service.html" >Services</a>
-            <a href="mailto:amruthkciby@gmail.com" >Contact</a>
-        </nav>
-    </header>
-
-    <main>
-        <section class="home">
-            <div class="home-img">
-                <img src="image.png" alt="A photo of Amruth">
-            </div>
-            <div class="home-content">
-                <h1>Hi, It's <span>Amruth</span></h1>
-                <h3 class="typing-text">I'm a <span></span></h3>
-                <p>A passionate and dedicated professional with a strong foundation in software development and a keen interest in emerging technologies. My goal is to leverage my skills to build innovative solutions that make a difference.</p>
-                <div class="social-icons">
-                    <a href="https://linkedin.com/in/amruthkciby" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://github.com/Amruthkciby" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="X/Twitter Profile"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="https://www.instagram.com/wolf____hunter?utm_source=qr&igsh=bmhmMHZnZzluaW1x" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile"><i class="fa-brands fa-instagram"></i></a>
-                </div>
-                <a href="mailto:amruthkciby@gmail.com?subject=Hiring Inquiry from Your Portfolio" class="btn">Hire me</a>
-            </div>
-        </section>
-    </main>
-    
-    <script>
-        // Hiding Header on Scroll
-        const header = document.querySelector('header');
-        let lastScrollY = window.scrollY;
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                if (lastScrollY < window.scrollY) { header.classList.add('header-hidden'); }
-                else { header.classList.remove('header-hidden'); }
-            } else { header.classList.remove('header-hidden'); }
-            lastScrollY = window.scrollY;
-        });
-
-        // Mobile Menu Toggle
-        let menuIcon = document.querySelector('#menu-icon');
-        let navbar = document.querySelector('nav');
-        menuIcon.onclick = () => {
-            menuIcon.classList.toggle('fa-xmark');
-            navbar.classList.toggle('active');
-        };
-    </script>
-
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script>
-        var typed = new Typed('.typing-text span', {
-            strings: ["Developer", "Web Designer", "Tech Enthusiast"],
-            typeSpeed: 100,
-            backSpeed: 60,
-            loop: true
-        });
-    </script>
-</body>
->>>>>>> 0eb1734447e6a3f428cd9e7c4ba75f71960c2324
 </html>
