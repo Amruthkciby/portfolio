@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>My Education - Amruth's Portfolio</title>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo1">AM</a>
+
+        <nav>
+            <a href="index.html"> Home</a>
+            <a href="https://drive.google.com/file/d/1ISjqEDyy6pC4yHq4OYkey-6l-t3t-BjC/view?usp=sharing" >Resume</a>
+            <a href="project.html">Projects</a>
+            <a href="education.html" class="active">Education</a>
+            <a href="service.html" >Services</a>
+            <a href="mailto:amruthkciby@gmail.com" >Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-section">
+            <h2 class="section-title">My <span>Education</span></h2>
+
+            <div class="education-container">
+                <div class="education-box">
+                    <div class="education-content">
+                        <div class="year"><i class="fa-solid fa-calendar-days"></i> 2023 - 2025</div>
+                        <h3>Master of Computer Application</h3>
+                        <p>Saintgits College of Engineering, Kottayam, Kerala.</p>
+                        <p><i>Maintained a GPA of 8.23/10.</i></p>
+                    </div>
+                </div>
+
+                <div class="education-box">
+                    <div class="education-content">
+                        <div class="year"><i class="fa-solid fa-calendar-days"></i> 2020 - 2023</div>
+                        <h3>Bachelor of Computer Application</h3>
+                        <p>Saintgits College of Applied Sciences, Kottayam, Kerala.</p>
+                        <p><i>Maintained a GPA of 7.8/10.</i></p>
+                    </div>
+                </div>
+
+                <div class="education-box">
+                    <div class="education-content">
+                        <div class="year"><i class="fa-solid fa-calendar-days"></i> 2018-2020</div>
+                        <h3>Class 12</h3>
+                        <p>Girideepam Bethany HSS, Kottayam, Kerala.</p>
+                        <p>Specialized in PCMC (Physics, Chemistry, Mathematics, Computer Science).</p>
+                        <p>Achieved a score of 81.5%.</p>
+                    </div>
+                </div>
+                
+                <div class="education-box">
+                    <div class="education-content">
+                        <div class="year"><i class="fa-solid fa-calendar-days"></i> 2017-2018</div>
+                        <h3>Class 10</h3>
+                        <p>Achieved a score of 79.4%.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const header = document.querySelector('header');
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) { // Start hiding after scrolling down a bit
+                if (lastScrollY < window.scrollY) {
+                    // User is scrolling DOWN
+                    header.classList.add('header-hidden');
+                } else {
+                    // User is scrolling UP
+                    header.classList.remove('header-hidden');
+                }
+            } else {
+                // Keep header visible at the very top of the page
+                header.classList.remove('header-hidden');
+            }
+            lastScrollY = window.scrollY;
+        });
+    </script>
+    
+    <script>
+        let menuIcon = document.querySelector('#menu-icon');
+        let navbar = document.querySelector('nav');
+        menuIcon.onclick = () => {
+            menuIcon.classList.toggle('fa-xmark');
+            navbar.classList.toggle('active');
+        };
+    </script>
+</body>
+</html>
