@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
     
@@ -131,4 +132,139 @@
         };
     </script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>My Projects - Amruth's Portfolio</title>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo1">AM</a>
+
+        
+
+        <nav>
+            <a href="index.html"> Home</a>
+            <a href="https://drive.google.com/file/d/1ISjqEDyy6pC4yHq4OYkey-6l-t3t-BjC/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
+            <a href="project.html" class="active">Projects</a>
+            <a href="education.html">Education</a>
+             <a href="#" >Service</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-section">
+            <h2 class="section-title">My <span>Projects</span></h2>
+
+            <div class="tab-links">
+                <button class="tab-btn active" data-tab="python">Python</button>
+                <button class="tab-btn" data-tab="iot">IoT</button>
+                <button class="tab-btn" data-tab="java">Java</button>
+            </div>
+
+            <div id="python" class="project-content active">
+                <div class="project-box">
+                    <img src="image1.png" alt="Advo-Chat Screenshot">
+                    <div class="project-info">
+                        <h4>AI-Based Advo-Chat</h4>
+                        <p>A web platform connecting users with lawyers based on specialization. Features a searchable IPC database and an AI chatbot to assist unregistered users in finding legal help efficiently.</p>
+                        <p><i>Technology Used: Python, Django, DBsqlite</i></p>
+                        <div class="project-links">
+                            <a href="https://github.com/Amruthkciby/ADVOCHAT" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Code</a>
+                            <a href="#" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="iot" class="project-content">
+                <div class="project-box">
+                    <img src="image3.jpg" alt="Robin Screenshot">
+                    <div class="project-info">
+                        <h4>Robin (Robotic Bin) - Waste Management Using IoT</h4>
+                        <p>This project revolutionizes waste management by using IoT sensors to track bin fill levels for timely collection. It features automated lids for touchless, hygienic operation.</p>
+                        <p><i>Technologies Used: Arduino UNO, Servo Motor, GSM, Ultrasonic Sensor</i></p>
+                        <div class="project-links">
+                            <a href="https://github.com/Amruthkciby/SMART-DUSTBIN" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Code</a>
+                            <a href="https://drive.google.com/file/d/1OffSjDgHjtPWb-sB2FNy-XQg2JmGxBwT/view?usp=sharing" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="java" class="project-content">
+                <div class="project-box">
+                    <img src="image2.png" alt="Betx Screenshot">
+                    <div class="project-info">
+                        <h4>Betx - Online Betting Application</h4>
+                        <p>An online platform for real-time cricket betting, allowing users to securely place bets on live matches. The system empowers administrators to manage bets transparently.</p>
+                        <p><i>Technologies Used: JSP, Java, HTML, CSS, MySQL</i></p>
+                        <div class="project-links">
+                            <a href="#" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Code</a>
+                            <a href="#" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    
+    <script>
+        const header = document.querySelector('header');
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                if (lastScrollY < window.scrollY) {
+                    header.classList.add('header-hidden');
+                } else {
+                    header.classList.remove('header-hidden');
+                }
+            } else {
+                header.classList.remove('header-hidden');
+            }
+            lastScrollY = window.scrollY;
+        });
+    </script>
+    
+    <script>
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const projectContents = document.querySelectorAll('.project-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons and content
+                tabBtns.forEach(b => b.classList.remove('active'));
+                projectContents.forEach(c => c.classList.remove('active'));
+
+                // Add active class to the clicked button
+                btn.classList.add('active');
+
+                // Show the corresponding content
+                const targetContent = document.getElementById(btn.dataset.tab);
+                if (targetContent) {
+                    targetContent.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+    <script>
+        let menuIcon = document.querySelector('#menu-icon');
+        let navbar = document.querySelector('nav');
+        menuIcon.onclick = () => {
+            menuIcon.classList.toggle('fa-xmark');
+            navbar.classList.toggle('active');
+        };
+    </script>
+</body>
+>>>>>>> 0eb1734447e6a3f428cd9e7c4ba75f71960c2324
 </html>
