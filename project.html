@@ -7,13 +7,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <title>My Projects - Amruth's Portfolio</title>
+
+    <style>
+        .project-content {
+            display: none; /* Hide all project sections by default */
+        }
+
+        .project-content.active {
+            display: flex;          /* Show ONLY the active section */
+            flex-direction: column; /* Arrange its projects top-to-bottom */
+            align-items: center;    /* Center the project boxes horizontally */
+            gap: 2rem;              /* Add space between projects */
+        }
+    </style>
 </head>
+
 <body>
     <header>
         <a href="index.html" class="logo1">AMR</a>
-
-        
-<i class="fa-solid fa-bars" id="menu-icon"></i>
+        <i class="fa-solid fa-bars" id="menu-icon"></i>
         <nav>
             <a href="index.html"> Home</a>
             <a href="https://drive.google.com/file/d/1ISjqEDyy6pC4yHq4OYkey-6l-t3t-BjC/view?usp=sharing">Resume</a>
@@ -47,8 +59,20 @@
                         </div>
                     </div>
                 </div>
+                <div class="project-box">
+                    <img src="image5.png" alt="City360 Screenshot">
+                    <div class="project-info">
+                        <h4>City360 - Online Service Booking</h4>
+                        <p>Developed a web platform for booking home services with user authentication, scheduling the services, and payment
+integration.</p>
+                        <p><i>Technology Used: Python, Django, MySQL, HTML, CSS, Javascript</i></p>
+                        <div class="project-links">
+                            <a href="#" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Code</a>
+                            <a href="#" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-
             <div id="iot" class="project-content">
                 <div class="project-box">
                     <img src="image3.jpg" alt="Robin Screenshot">
@@ -63,7 +87,6 @@
                     </div>
                 </div>
             </div>
-
             <div id="java" class="project-content">
                 <div class="project-box">
                     <img src="image2.png" alt="Betx Screenshot">
@@ -78,14 +101,12 @@
                     </div>
                 </div>
             </div>
-
-        </section>
+            </section>
     </main>
     
     <script>
         const header = document.querySelector('header');
         let lastScrollY = window.scrollY;
-
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
                 if (lastScrollY < window.scrollY) {
@@ -103,17 +124,11 @@
     <script>
         const tabBtns = document.querySelectorAll('.tab-btn');
         const projectContents = document.querySelectorAll('.project-content');
-
         tabBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Remove active class from all buttons and content
                 tabBtns.forEach(b => b.classList.remove('active'));
                 projectContents.forEach(c => c.classList.remove('active'));
-
-                // Add active class to the clicked button
                 btn.classList.add('active');
-
-                // Show the corresponding content
                 const targetContent = document.getElementById(btn.dataset.tab);
                 if (targetContent) {
                     targetContent.classList.add('active');
