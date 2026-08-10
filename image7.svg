@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="250" viewBox="0 0 1000 250">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#161616"/>
+      <stop offset="100%" stop-color="#241b24"/>
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="250" fill="url(#bg)"/>
+  <g opacity="0.12" stroke="#e94560" stroke-width="2">
+    <line x1="0" y1="60" x2="1000" y2="60"/>
+    <line x1="0" y1="190" x2="1000" y2="190"/>
+  </g>
+  <circle cx="880" cy="60" r="26" fill="none" stroke="#e94560" stroke-width="4"/>
+  <path d="M868 60 l9 9 l17 -19" fill="none" stroke="#e94560" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="60" y="110" font-family="Segoe UI, Arial, sans-serif" font-size="46" font-weight="700" fill="#ffffff">Automation Exercise</text>
+  <text x="60" y="150" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="600" fill="#e94560" letter-spacing="1">QA &amp; TEST AUTOMATION PROJECT</text>
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="600" fill="#161616">
+    <rect x="60" y="178" width="118" height="34" rx="17" fill="#e94560"/>
+    <text x="86" y="200">Playwright</text>
+    <rect x="190" y="178" width="120" height="34" rx="17" fill="#ffffff"/>
+    <text x="216" y="200">TypeScript</text>
+    <rect x="322" y="178" width="70" height="34" rx="17" fill="#ffffff"/>
+    <text x="340" y="200">POM</text>
+    <rect x="404" y="178" width="110" height="34" rx="17" fill="#ffffff"/>
+    <text x="424" y="200">Allure</text>
+  </g>
+</svg>
